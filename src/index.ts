@@ -7,12 +7,10 @@ type Config = {
     };
 };
 
-const DEFAULT_CLUSTER_CONFIG = "foo";
-
 const getDefaultClusters = (clusters: Config["clusters"]) => {
     return new Proxy(clusters, {
         get() {
-            return DEFAULT_CLUSTER_CONFIG;
+            return "foo";
         },
     });
 };
